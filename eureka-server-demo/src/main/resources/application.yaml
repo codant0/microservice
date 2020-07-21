@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: Eureka Server Demo
+eureka:
+  instance:
+    prefer-ip-address: false
+---
+server:
+  port: 8081
+spring:
+  profiles: node1
+eureka:
+  instance:
+    hostname: node1
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://node2:8082/eureka/, http://node3:8083/eureka/
+
+---
+server:
+  port: 8082
+spring:
+  profiles: node2
+eureka:
+  instance:
+    hostname: node2
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://node1:8081/eureka/, http://node3:8083/eureka/
+
+---
+server:
+  port: 8083
+spring:
+  profiles: node3
+eureka:
+  instance:
+    hostname: node3
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://node2:8082/eureka/, http://node1:8081/eureka/
