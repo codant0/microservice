@@ -1,0 +1,37 @@
+#spring:
+#  application:
+#    name: provider
+#server:
+#  port: 8000
+#provider:
+#  name: provider0
+
+# 服务中心的地址
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://node1:8081/eureka,
+                    http://node2:8082/eureka,
+                    http://node3:8083/eureka
+
+# 服务提供者集群配置
+---
+spring:
+  profiles: provider1
+server:
+  port: 8001
+provider:
+  name: provider1
+eureka:
+  instance:
+    appname: provier1
+---
+spring:
+  profiles: provider2
+server:
+  port: 8002
+provider:
+  name: provider2
+eureka:
+  instance:
+    appname: provier2
