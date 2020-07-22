@@ -9,3 +9,6 @@ spring:
         register: false
 server:
   port: 8506
+provider:
+  ribbon:
+    listOfServers: localhost:8503,localhost:8505

@@ -1,6 +1,5 @@
 package com.boss.consulconsumerdemo.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
@@ -26,6 +25,17 @@ public class HelloController {
         this.loadBalancerClient = loadBalancerClient;
         this.discoveryClient = discoveryClient;
     }
+
+    /**
+     * ribbon负载均衡策略测试（此为随机分配）
+     * @return
+     */
+    @GetMapping("/ribbon")
+    public String ribbonTest() {
+        ServiceInstance serviceInstance = loadBalancerClient.choose("provider");
+        return serviceInstance.getHost() +" : " + serviceInstance.getPort();
+    }
+
     /**获取所有服务提供者 */
     @GetMapping("/instances-lists")
     public Object instancesLists() {
