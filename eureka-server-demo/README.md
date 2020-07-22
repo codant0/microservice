@@ -6,7 +6,7 @@
 * application.yaml配置文件中，定义公共配置文件和局部配置文件，用 " --- " 分隔不同profile文件，并分别配置spring.profile 
 * host文件中配置DNS映射
 
-### profile运行方式
+### profile运行方式 
 
 * maven：
 
