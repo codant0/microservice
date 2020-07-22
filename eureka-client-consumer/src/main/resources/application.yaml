@@ -1,0 +1,16 @@
+# 服务消费者名称
+spring:
+  application:
+    name: consumer
+# 服务消费者的端口号
+server:
+  port: 9000
+eureka:
+  client:
+    # 不注册到"服务中心"
+    register-with-eureka: false
+    # 服务中心的地址
+    service-url:
+      defaultZone:  http://node1:8081/eureka,
+                    http://node2:8082/eureka,
+                    http://node3:8083/eureka
