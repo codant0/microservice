@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: consul-provider
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        # 注册到Consul的服务名称
+        service-name: service-provider
+provider:
+  name: provider
+server:
+  port: 8505
