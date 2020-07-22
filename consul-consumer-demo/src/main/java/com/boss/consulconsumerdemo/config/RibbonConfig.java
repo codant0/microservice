@@ -18,6 +18,13 @@ public class RibbonConfig {
 
     /**
      * 选择Ribbon的规则，此为随机。
+     * 负载均衡策略：
+     * Round Robin Rule - 线性轮询策略
+     * Retry Rule - 重试策略
+     * WeightedResponseTimeRule - 加权响应时间策略
+     * RandomRule - 随机策略
+     * ClientConfigEnabledRoundRobinRule - 客户端配置启用线性轮询策略
+     * ......
      * 配置类与@Bean注解配合使用
      * @return
      */
