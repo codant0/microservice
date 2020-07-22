@@ -6,4 +6,4 @@
     * @EnableDiscoveryClient注解是基于spring-cloud-commons依赖，并且在classpath中实现。
     * @EnableEurekaClient注解是基于spring-cloud-netflix依赖，只能为eureka作用。
     * @EnableEurekaClient只适用于Eureka作为注册中心，@EnableDiscoveryClient 可以是其他注册中心。
-* 
+* 单主机集群方式同eureka-server-demo
