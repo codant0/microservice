@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: HystrixDashboard
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+server:
+  port: 9901
+feign:
+  hystrix:
+    # 开启Hystrix
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
