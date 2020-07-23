@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: Hrstrix
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        register: false
+server:
+  port: 8555
+# 开启Hystrix
+feign:
+  hystrix:
+    enabled: true
