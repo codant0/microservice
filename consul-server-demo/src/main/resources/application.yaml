@@ -6,7 +6,6 @@ spring:
       host: localhost
       port: 8500
       discovery:
-        # 注册到Consul的服务名称
         service-name: service-provider
 provider:
   name: provider
