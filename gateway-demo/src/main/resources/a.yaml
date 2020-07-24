@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: Gateway-Forward
+    gateway:
+      routes:
+        # 路由ID
+        - id: hello
+          # 目标服务地址
+          uri: http://www.csdn.net
+          # predicates：路由条件。Predicate根据输入返回一个布尔值。其中包含多种默认方法来将Predicate组合成复杂的路由逻辑
+          predicates:
+             - Path=/nav/**
+            # 注意此处为等号
+#            - After=2027-04-17T06:06:06+08:00[Asia/Shanghai]
+server:
+  port: 8221
+#logging:
+#  level: debug
