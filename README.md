@@ -12,4 +12,9 @@ MicroService Practice Demo
 ## 容错处理
 
 * Hystrix
-* 
+
+
+
+## 网关
+
+* Gateway
